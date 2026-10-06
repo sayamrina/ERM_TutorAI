@@ -39,6 +39,8 @@ erm_tutorai/
 ├── requirements.txt           # List of project dependencies
 └── README.md                  # Project overview and instructions
 
+---
+
 📦 Dependencies
 
 The project relies on the following primary Python libraries (specified in requirements.txt):
