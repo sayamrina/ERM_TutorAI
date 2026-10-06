@@ -11,7 +11,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
-from langchain_chains import RetrievalQA
+from langchain.chains import RetrievalQA
 
 class ChatBot:
     def __init__(self):
