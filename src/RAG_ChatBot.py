@@ -9,9 +9,9 @@ from langchain_core.documents import Document
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
+from langchain_chains import RetrievalQA
 
 class ChatBot:
     def __init__(self):
