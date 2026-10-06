@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from markitdown import MarkItDown
 from langchain_core.documents import Document
 from langchain_text_splitters import CharacterTextSplitter
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
