@@ -1,52 +1,40 @@
-# Simple RAG Chatbot with Langchain
+# 🎓 ERM Tutor-AI: A RAG-Based Educational Tutor
 
-## Overview
-The goal of this project is to develop a **domain-specific application** that combines the strengths of a **Large Language Model (LLM)** with the **efficiency of a vector database** for data storage and retrieval. Using **Retrieval-Augmented Generation (RAG)** for the method and **Streamlit** for the front-end, the application is built with Python.
+This project was initially completed and presented in November 2025, during which the system was running exclusively in a local environment. In October 2026, the source code and database were published to GitHub and deployed via Streamlit Cloud, allowing its functionality to be accessed and tested directly online.
 
-## Technology Stack:
-- **Frontend**: Streamlit for building the user interface.
-- **Vector Database**: Pinecone for efficient data storage and retrieval. 
-- **LLM**: OpenAI model for natural language processing and query handling.
-- **Backend**: LangChain framework utilizing the RAG method.
+Developed as part of a thesis project for the Master of Educational Technology program at Saarland University[cite: 3], this project integrates Generative Artificial Intelligence (GAI) with the Retrieval-Augmented Generation (RAG) framework to create an interactive AI tutor assistant for students taking the Empirical Research Methods (ERM) course.
 
-## Project Structure
-- **src/**: Contains Python-based chatbot script and Streamlit main script.
-- **src/materials/**: Contains data that our model will use to answer questions.
-- **report/**: Stores [Report](report) files.
-- **video/**: Contains [video](video) presentation. You can also watch the video on [YouTube](https://youtu.be/wo-0wUplqSM).
-- **.env**: Contains API keys.
+---
 
-## Dependencies
-- Python 3.7+
-- langchain
-- pinecone-client
-- python-dotenv
-- streamlit
-- pypdf
+## 📖 Background and Problem Statement
 
-## Usage
-1. Clone the repository: `git clone https://github.com/Faridghr/Simple-RAG-Chatbot.git`
-2. Navigate to the project directory: `cd Simple-RAG-Chatbot`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Set up your LLM.
-5. Set up your Pinecone API key in `.env` file.
-5. Navigate to src directory: `cd src`
-6. Run the Streamlit application: `streamlit run streamlitMain.py`
-7. Open your web browser and navigate to the URL provided by Streamlit (usually http://localhost:8501).
-8. Interact with the chatbot by typing messages and receiving responses from the local LLM service.
+Although Large Language Models (LLMs) possess remarkable generative capabilities, they are prone to "hallucinations"—a phenomenon where the AI generates information that sounds plausible but is factually incorrect or unfounded. In a higher education context that demands strict precision, these inaccuracies can mislead students and disrupt the learning process[cite: 32]. 
 
-## Setting Up OpenAI API
-1. Enter our OpenAI account and navigate to [OpenAI Platform](https://platform.openai.com/apps). 
-2. Navigate to the API section.
-3. Proceed to create a new API key by pressing '+ Create' new secret key.
-4. Select a suitable name to remember and press the Create secret key button.
-5. Copy the secret key and add your OpenAI API Keys in a file called `.env`.
+To mitigate this risk, ERM Tutor-AI combines the capabilities of a GPT-based model with a curated knowledge database containing validated ERM course materials and literature[cite: 11]. By leveraging the RAG architecture, the system is forced to retrieve information directly from official course materials before generating a response, ensuring that the provided answers are always accurate, contextually relevant, and free from misinformation[cite: 11].
 
-## Setting up Pinecone
-1. To create a PineCone account, sign up via this link: [Pinecone](https://www.pinecone.io/)
-2. After registering with the free tier, go into the project, and click on Create a Projec.
-3. Fill in the Project Name, Cloud Provider, and Environment. In this case, I have used “SimpleRAGChatbot Application” as a Project Name, GCP as Cloud Provider, and Iowa (gcp-starter) as an Environment.
-4. After the project is created, go into the API Keys section, and make sure you have an API key available. Do not share this API key.
-5. After completing the account setup, you can add your Pinecone API Keys in a file called `.env`.
+---
 
+## 🛠️ Technology Stack
 
+*   **Frontend / UI:** Streamlit[cite: 57] for building an interactive, user-friendly web interface that facilitates real-time dialogue[cite: 61, 62].
+*   **Large Language Model (LLM):** OpenAI GPT-4o accessed via API for advanced natural language understanding and generation[cite: 57, 58].
+*   **Orchestration Framework:** LangChain to manage the data flow between the user interface, the vector database, and the LLM[cite: 60].
+*   **Vector Database:** ChromaDB[cite: 57] for storing embedded text chunks and performing efficient semantic similarity searches[cite: 60].
+*   **Embeddings:** `sentence-transformers` (via Hugging Face) to convert text chunks into high-dimensional numeric representations to capture semantic meaning[cite: 58].
+*   **Document Parsing:** Markitdown for extracting structured metadata from course PDFs to ensure high searchability and transparency[cite: 60].
+
+---
+
+## 📂 Project Structure
+
+```text
+erm_tutorai/
+│
+├── chroma_db/                 # Pre-built vector database containing ERM course embeddings
+├── src/
+│   ├── RAG_ChatBot.py         # Backend logic, LLM integration, and RAG pipeline
+│   └── streamlit.py           # Frontend UI, chat interface, and session state management
+│
+├── logo_ermai.png             # Application logo and visual assets
+├── requirements.txt           # List of project dependencies
+└── README.md                  # Project overview and instructions
