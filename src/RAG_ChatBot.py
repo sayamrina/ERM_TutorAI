@@ -6,7 +6,7 @@ import glob
 from dotenv import load_dotenv
 from markitdown import MarkItDown
 from langchain_core.documents import Document
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_text_splitters import CharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from langchain import PromptTemplate
